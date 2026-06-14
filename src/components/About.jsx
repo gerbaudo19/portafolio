@@ -1,4 +1,6 @@
 export default function About() {
+  const imgUrl = import.meta.env.BASE_URL + 'perfil.png'
+
   return (
     <section id="sobre-mi">
       <div className="container">
@@ -10,14 +12,24 @@ export default function About() {
         </p>
 
         <div className="about-grid">
-          <div className="about-image">
-            <div className="about-image-placeholder">
-              <span>MG</span>
+          <div className="about-image-wrapper">
+            <img
+              src={imgUrl}
+              alt="Mateo Gerbaudo"
+              className="about-image"
+              onError={(e) => {
+                e.target.style.display = 'none'
+                e.target.nextSibling.style.display = 'flex'
+              }}
+            />
+            <div className="about-image-placeholder" style={{ display: 'none' }}>
+              MG
             </div>
           </div>
 
           <div className="about-text">
             <h3>Mateo Gerbaudo</h3>
+            <p className="about-role">Estudiante de Ingeniería en Sistemas</p>
             <p>
               Estudiante de <strong>Ingeniería en Sistemas de Información</strong> en la
               Facultad Regional de Villa María (UTN). Apasionado por la tecnología
@@ -33,29 +45,29 @@ export default function About() {
 
             <div className="about-details">
               <div className="detail">
-                <span className="detail-icon">📍</span>
-                <div>
+                <div className="detail-icon">📍</div>
+                <div className="detail-info">
                   <strong>Ubicación</strong>
                   <p>Villa María, Córdoba, Argentina</p>
                 </div>
               </div>
               <div className="detail">
-                <span className="detail-icon">📧</span>
-                <div>
+                <div className="detail-icon">📧</div>
+                <div className="detail-info">
                   <strong>Email</strong>
                   <p>mgerbaudo02@gmail.com</p>
                 </div>
               </div>
               <div className="detail">
-                <span className="detail-icon">🎓</span>
-                <div>
+                <div className="detail-icon">🎓</div>
+                <div className="detail-info">
                   <strong>Estudio</strong>
                   <p>UTN FRVM - Ing. en Sistemas</p>
                 </div>
               </div>
               <div className="detail">
-                <span className="detail-icon">💼</span>
-                <div>
+                <div className="detail-icon">💼</div>
+                <div className="detail-info">
                   <strong>Disponibilidad</strong>
                   <p>Freelance / Proyectos</p>
                 </div>

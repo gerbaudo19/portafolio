@@ -1,36 +1,63 @@
 export default function Hero() {
+  const imgUrl = import.meta.env.BASE_URL + 'perfil.png'
+
   return (
     <section id="inicio" className="hero">
       <div className="hero-bg" />
-      <div className="container hero-content">
-        <span className="hero-greeting">👋 ¡Hola! Soy</span>
-        <h1 className="hero-name">
-          Mateo <span className="highlight">Gerbaudo</span>
-        </h1>
-        <p className="hero-description">
-          Estudiante de Ingeniería en Sistemas de Información |
-          Desarrollador de Software apasionado por la tecnología
-        </p>
-        <div className="hero-actions">
-          <a href="#proyectos" className="btn btn-primary">
-            Ver proyectos
-          </a>
-          <a href="#contacto" className="btn btn-secondary">
-            Contactarme
-          </a>
+      <div className="container hero-grid">
+        <div className="hero-text">
+          <div className="hero-greeting">
+            <span className="hero-greeting-dot" />
+            Disponible para proyectos
+          </div>
+          <h1 className="hero-name">
+            Mateo <span className="highlight">Gerbaudo</span>
+          </h1>
+          <p className="hero-role">Desarrollador de Software</p>
+          <p className="hero-description">
+            Estudiante de Ingeniería en Sistemas de Información,
+            apasionado por crear soluciones web modernas y eficientes.
+          </p>
+          <div className="hero-actions">
+            <a href="#proyectos" className="btn btn-primary">
+              Ver proyectos
+            </a>
+            <a href="#contacto" className="btn btn-secondary">
+              Contacto
+            </a>
+          </div>
+          <div className="hero-stats">
+            <div className="stat">
+              <span className="stat-number">2+</span>
+              <span className="stat-label">Años</span>
+            </div>
+            <div className="stat">
+              <span className="stat-number">7</span>
+              <span className="stat-label">Proyectos</span>
+            </div>
+            <div className="stat">
+              <span className="stat-number">5+</span>
+              <span className="stat-label">Tecnologías</span>
+            </div>
+          </div>
         </div>
-        <div className="hero-stats">
-          <div className="stat">
-            <span className="stat-number">2+</span>
-            <span className="stat-label">Años estudiando</span>
-          </div>
-          <div className="stat">
-            <span className="stat-number">7</span>
-            <span className="stat-label">Proyectos</span>
-          </div>
-          <div className="stat">
-            <span className="stat-number">3+</span>
-            <span className="stat-label">Tecnologías</span>
+
+        <div className="hero-visual">
+          <div className="hero-image-wrapper">
+            <div className="hero-image-ring" />
+            <div className="hero-image-ring" />
+            <img
+              src={imgUrl}
+              alt="Mateo Gerbaudo"
+              className="hero-image"
+              onError={(e) => {
+                e.target.style.display = 'none'
+                e.target.nextSibling.style.display = 'flex'
+              }}
+            />
+            <div className="hero-image-placeholder" style={{ display: 'none' }}>
+              MG
+            </div>
           </div>
         </div>
       </div>
