@@ -1,9 +1,12 @@
+import useScrollReveal from '../hooks/useScrollReveal'
+
 export default function About() {
   const imgUrl = import.meta.env.BASE_URL + 'perfil.png'
+  const ref = useScrollReveal()
 
   return (
     <section id="sobre-mi">
-      <div className="container">
+      <div className="container" ref={ref}>
         <h2 className="section-title">
           Sobre <span className="highlight">mí</span>
         </h2>
@@ -19,7 +22,7 @@ export default function About() {
               className="about-image"
               onError={(e) => {
                 e.target.style.display = 'none'
-                e.target.nextSibling.style.display = 'flex'
+                e.target.nextElementSibling.style.display = 'flex'
               }}
             />
             <div className="about-image-placeholder" style={{ display: 'none' }}>
@@ -29,7 +32,7 @@ export default function About() {
 
           <div className="about-text">
             <h3>Mateo Gerbaudo</h3>
-            <p className="about-role">Estudiante de Ingeniería en Sistemas</p>
+            <p className="about-role">Desarrollador Full Stack</p>
             <p>
               Estudiante de <strong>Ingeniería en Sistemas de Información</strong> en la
               Facultad Regional de Villa María (UTN). Apasionado por la tecnología
@@ -37,10 +40,11 @@ export default function About() {
               y oportunidades de aprendizaje.
             </p>
             <p>
-              Me especializo en el desarrollo de aplicaciones web modernas,
-              combinando tecnologías del ecosistema Java/Spring Boot en el backend
-              con React en el frontend. Disfruto crear soluciones eficientes y
-              bien estructuradas.
+              Me especializo en el desarrollo de aplicaciones web completas,
+              combinando <strong>React + TypeScript</strong> en el frontend con
+              <strong> NestJS o Spring Boot</strong> en el backend. Participo en
+              todo el ciclo de vida del software: relevamiento, planificación,
+              desarrollo, documentación técnica y despliegue en producción.
             </p>
 
             <div className="about-details">
@@ -69,14 +73,7 @@ export default function About() {
                 <div className="detail-icon">🎓</div>
                 <div className="detail-info">
                   <strong>Estudio</strong>
-                  <p>UTN FRVM - Ing. en Sistemas</p>
-                </div>
-              </div>
-              <div className="detail">
-                <div className="detail-icon">💼</div>
-                <div className="detail-info">
-                  <strong>Disponibilidad</strong>
-                  <p>Freelance / Proyectos</p>
+                  <p>UTN FRVM - 5° año Ing. Sistemas</p>
                 </div>
               </div>
             </div>

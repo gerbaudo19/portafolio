@@ -1,3 +1,5 @@
+import useScrollReveal from '../hooks/useScrollReveal'
+
 const skillCategories = [
   {
     title: 'Frontend',
@@ -60,9 +62,11 @@ const skillCategories = [
 ]
 
 export default function Skills() {
+  const ref = useScrollReveal()
+
   return (
     <section id="skills">
-      <div className="container">
+      <div className="container" ref={ref}>
         <h2 className="section-title">
           Mis <span className="highlight">Skills</span>
         </h2>

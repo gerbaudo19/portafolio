@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import ProgressBar from './ProgressBar'
 
 const navLinks = [
   { href: '#inicio', label: 'Inicio' },
@@ -13,42 +14,61 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', onScroll)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 50)
+
+      const sections = navLinks.map(l => l.href.slice(1))
+      for (const id of sections.reverse()) {
+        const el = document.getElementById(id)
+        if (el && el.getBoundingClientRect().top <= 150) {
+          setActiveSection(id)
+          break
+        }
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   const handleClick = () => setMenuOpen(false)
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div className="navbar-container">
-        <a href="#inicio" className="navbar-logo" onClick={handleClick}>
-          {'<MG />'}
-        </a>
+    <>
+      <ProgressBar />
+      <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+        <div className="navbar-container">
+          <a href="#inicio" className="navbar-logo" onClick={handleClick}>
+            {'<MG />'}
+          </a>
 
-        <button
-          className="navbar-toggle"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Menú"
-        >
-          <span className={`toggle-bar ${menuOpen ? 'open' : ''}`} />
-          <span className={`toggle-bar ${menuOpen ? 'open' : ''}`} />
-          <span className={`toggle-bar ${menuOpen ? 'open' : ''}`} />
-        </button>
+          <button
+            className="navbar-toggle"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Menú"
+          >
+            <span className={`toggle-bar ${menuOpen ? 'open' : ''}`} />
+            <span className={`toggle-bar ${menuOpen ? 'open' : ''}`} />
+            <span className={`toggle-bar ${menuOpen ? 'open' : ''}`} />
+          </button>
 
-        <ul className={`navbar-links ${menuOpen ? 'active' : ''}`}>
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a href={link.href} onClick={handleClick}>
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </nav>
+          <ul className={`navbar-links ${menuOpen ? 'active' : ''}`}>
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={handleClick}
+                  className={activeSection === link.href.slice(1) ? 'active' : ''}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+    </>
   )
 }

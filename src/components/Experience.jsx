@@ -1,3 +1,5 @@
+import useScrollReveal from '../hooks/useScrollReveal'
+
 const timeline = [
   {
     type: 'work',
@@ -18,9 +20,11 @@ const timeline = [
 ]
 
 export default function Experience() {
+  const ref = useScrollReveal()
+
   return (
     <section id="experiencia">
-      <div className="container">
+      <div className="container" ref={ref}>
         <h2 className="section-title">
           Experiencia & <span className="highlight">Educación</span>
         </h2>
@@ -33,10 +37,12 @@ export default function Experience() {
             <div key={index} className="timeline-item">
               <div className="timeline-dot" />
               <div className="card timeline-content">
-                <span className="timeline-year">{item.year}</span>
-                <span className={`timeline-type ${item.type}`}>
-                  {item.type === 'work' ? '💼 Trabajo' : '🎓 Educación'}
-                </span>
+                <div className="timeline-meta">
+                  <span className="timeline-year">{item.year}</span>
+                  <span className={`timeline-type ${item.type}`}>
+                    {item.type === 'work' ? '💼 Trabajo' : '🎓 Educación'}
+                  </span>
+                </div>
                 <h3 className="timeline-title">{item.title}</h3>
                 <p className="timeline-institution">{item.institution}</p>
                 <p className="timeline-description">{item.description}</p>
