@@ -59,6 +59,13 @@ export default function About() {
                 </div>
               </div>
               <div className="detail">
+                <div className="detail-icon">📱</div>
+                <div className="detail-info">
+                  <strong>Teléfono</strong>
+                  <p>+54 3537 661736</p>
+                </div>
+              </div>
+              <div className="detail">
                 <div className="detail-icon">🎓</div>
                 <div className="detail-info">
                   <strong>Estudio</strong>

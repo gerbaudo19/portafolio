@@ -13,10 +13,10 @@ export default function Hero() {
           <h1 className="hero-name">
             Mateo <span className="highlight">Gerbaudo</span>
           </h1>
-          <p className="hero-role">Desarrollador de Software</p>
+          <p className="hero-role">Desarrollador Full Stack</p>
           <p className="hero-description">
-            Estudiante de Ingeniería en Sistemas de Información,
-            apasionado por crear soluciones web modernas y eficientes.
+            Especializado en React + TypeScript y NestJS / Spring Boot.
+            Creo soluciones web completas, desde la idea hasta el despliegue.
           </p>
           <div className="hero-actions">
             <a href="#proyectos" className="btn btn-primary">
@@ -38,6 +38,10 @@ export default function Hero() {
             <div className="stat">
               <span className="stat-number">5+</span>
               <span className="stat-label">Tecnologías</span>
+            </div>
+            <div className="stat">
+              <span className="stat-number">5°</span>
+              <span className="stat-label">Año Ing. Sistemas</span>
             </div>
           </div>
         </div>

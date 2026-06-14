@@ -2,36 +2,36 @@ const projects = [
   {
     title: 'Mercado Fiado',
     description:
-      'App para gestionar fiados en comercios. Sistema completo con autenticación JWT, gestión de clientes, productos y control de deudas.',
-    tech: ['React', 'TypeScript', 'Node.js', 'JWT'],
+      'Aplicación web para la gestión de ventas fiadas y control de deudas en comercios. Resuelve la necesidad de llevar un registro digital de transacciones a crédito, calculando saldos en tiempo real y permitiendo el seguimiento de clientes y pagos. Incluye autenticación JWT con control de sesiones y protección de rutas por rol, más integración con pasarela de pagos.',
+    tech: ['React', 'TypeScript', 'NestJS', 'JWT', 'Supabase'],
     links: {
       github: 'https://github.com/gerbaudo19/fiado-backend',
       demo: 'https://mercadofiado.vercel.app/',
     },
   },
   {
+    title: 'Sistema Gestor de Cosecha',
+    description:
+      'Sistema de trazabilidad y control de cargas de camiones asociadas a lotes agrícolas. Automatiza la validación de datos del sector agropecuario, permitiendo registrar y consultar operaciones de cosecha con precisión. API REST documentada con Swagger y reglas de negocio específicas del dominio agropecuario.',
+    tech: ['TypeScript', 'NestJS', 'React', 'MongoDB', 'Swagger'],
+    links: {
+      github: 'https://github.com/gerbaudo19/sistema-gestor-cosecha-frontend',
+    },
+  },
+  {
     title: 'Magallanes Management System',
     description:
-      'Sistema de gestión integral para optimizar el manejo de información de clientes, empleados, productos y órdenes en un entorno empresarial.',
+      'Sistema integral de gestión para tiendas de ropa. Desarrollado en equipo bajo metodología Scrum, abarcando análisis de requerimientos, diseño de funcionalidades y control de versiones. Optimiza la administración de clientes, empleados, productos y pedidos en un solo lugar.',
     tech: ['Java', 'Spring Boot', 'MySQL', 'Bootstrap'],
     links: {
       github: 'https://github.com/gerbaudo19/magallanes.github.io',
     },
   },
   {
-    title: 'Sistema Gestor de Cosecha',
-    description:
-      'Plataforma para la gestión y seguimiento de cosechas, con frontend y backend separados, desarrollado con TypeScript.',
-    tech: ['TypeScript', 'Node.js', 'React'],
-    links: {
-      github: 'https://github.com/gerbaudo19/sistema-gestor-cosecha-frontend',
-    },
-  },
-  {
     title: 'JWT Auth System',
     description:
-      'Sistema de autenticación con JWT usando Spring Boot. Incluye registro de usuarios, login y protección de endpoints.',
-    tech: ['Java', 'Spring Boot', 'JWT', 'Security'],
+      'Sistema de autenticación robusto con JSON Web Tokens construido con Spring Boot. Proporciona registro de usuarios, inicio de sesión seguro y protección de endpoints. Ideal como base para cualquier aplicación que requiera control de acceso y manejo de sesiones.',
+    tech: ['Java', 'Spring Boot', 'JWT', 'Spring Security'],
     links: {
       github: 'https://github.com/gerbaudo19/jwt-auth-system',
     },
@@ -39,7 +39,7 @@ const projects = [
   {
     title: 'Auto S.A. Testbed',
     description:
-      'Aplicación Spring Boot para la gestión de información automotriz, desarrollada en la cátedra de Programación Avanzada.',
+      'Aplicación para la gestión de información automotriz, desarrollada como proyecto de la cátedra Programación Avanzada. Aborda conceptos de arquitectura MVC, persistencia de datos y desarrollo de APIs con Spring Boot.',
     tech: ['Java', 'Spring Boot', 'JavaScript'],
     links: {
       github: 'https://github.com/gerbaudo19/Auto-S-A-Testbed',
@@ -48,8 +48,8 @@ const projects = [
   {
     title: 'Portafolio Personal',
     description:
-      'Este mismo portafolio. Desarrollado con React + Vite, diseño moderno responsive y deployado en GitHub Pages.',
-    tech: ['React', 'Vite', 'CSS'],
+      'Este portafolio. Diseñado y desarrollado desde cero con React + Vite, mostrando proyectos, habilidades y experiencia profesional. Diseño responsive, modo oscuro y despliegue automatizado en GitHub Pages.',
+    tech: ['React', 'Vite', 'CSS', 'GitHub Pages'],
     links: {
       github: 'https://github.com/gerbaudo19/portafolio',
     },
@@ -64,7 +64,8 @@ export default function Projects() {
           Mis <span className="highlight">Proyectos</span>
         </h2>
         <p className="section-subtitle">
-          Algunos de los proyectos en los que he trabajado
+          Proyectos reales, desde sistemas en producción hasta trabajos
+          académicos, cubriendo distintas industrias y necesidades
         </p>
 
         <div className="projects-grid">

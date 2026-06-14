@@ -2,11 +2,11 @@ const skillCategories = [
   {
     title: 'Frontend',
     skills: [
-      { name: 'HTML/CSS', level: 90 },
+      { name: 'React', level: 80 },
+      { name: 'TypeScript', level: 80 },
       { name: 'JavaScript', level: 85 },
-      { name: 'TypeScript', level: 75 },
-      { name: 'React', level: 70 },
-      { name: 'Bootstrap', level: 80 },
+      { name: 'HTML5 / CSS3', level: 90 },
+      { name: 'Vite', level: 75 },
     ],
   },
   {
@@ -14,19 +14,47 @@ const skillCategories = [
     skills: [
       { name: 'Java', level: 85 },
       { name: 'Spring Boot', level: 80 },
-      { name: 'JPA/Hibernate', level: 75 },
-      { name: 'REST APIs', level: 80 },
-      { name: 'Node.js', level: 60 },
+      { name: 'NestJS', level: 70 },
+      { name: 'Spring Security / JWT', level: 80 },
+      { name: 'REST APIs / Swagger', level: 85 },
     ],
   },
   {
-    title: 'Bases de Datos & Herramientas',
+    title: 'Bases de Datos',
     skills: [
+      { name: 'PostgreSQL', level: 75 },
       { name: 'MySQL', level: 80 },
-      { name: 'Git/GitHub', level: 85 },
-      { name: 'Docker', level: 50 },
-      { name: 'Postman', level: 75 },
-      { name: 'Linux', level: 65 },
+      { name: 'MongoDB', level: 70 },
+      { name: 'Hibernate / JPA', level: 75 },
+      { name: 'Supabase', level: 65 },
+    ],
+  },
+  {
+    title: 'DevOps & Herramientas',
+    skills: [
+      { name: 'Git / GitHub', level: 85 },
+      { name: 'Postman', level: 80 },
+      { name: 'Maven', level: 75 },
+      { name: 'Vercel / Render', level: 75 },
+      { name: 'Swagger / OpenAPI', level: 80 },
+    ],
+  },
+  {
+    title: 'Testing',
+    skills: [
+      { name: 'JUnit 5', level: 75 },
+      { name: 'Mockito', level: 70 },
+      { name: 'Jest', level: 65 },
+      { name: 'Pruebas de Integración', level: 70 },
+    ],
+  },
+  {
+    title: 'Metodologías',
+    skills: [
+      { name: 'Scrum', level: 75 },
+      { name: 'Trabajo en equipo', level: 85 },
+      { name: 'Documentación técnica', level: 80 },
+      { name: 'Comunicación con stakeholders', level: 75 },
     ],
   },
 ]
@@ -39,7 +67,7 @@ export default function Skills() {
           Mis <span className="highlight">Skills</span>
         </h2>
         <p className="section-subtitle">
-          Tecnologías y herramientas con las que trabajo diariamente
+          Tecnologías, herramientas y metodologías con las que trabajo
         </p>
 
         <div className="skills-grid">

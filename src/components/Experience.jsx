@@ -1,10 +1,19 @@
 const timeline = [
   {
-    year: '2024 - Presente',
-    title: 'Estudiante de Ingeniería en Sistemas',
-    institution: 'UTN - Facultad Regional de Villa María',
+    type: 'work',
+    year: 'Ene 2024 - Actualidad',
+    title: 'Desarrollador Full Stack',
+    institution: 'Proyectos Independientes · Remoto',
     description:
-      'Formación en desarrollo de software, bases de datos, redes y sistemas de información.',
+      'Desarrollo de aplicaciones web completas: diseño de arquitectura, lógica de negocio, integración frontend-backend y despliegue en producción. Implementación de APIs REST con validaciones, manejo de errores y documentación con Swagger/OpenAPI. Autenticación mediante JWT e integración con pasarelas de pago. Trabajo iterativo con clientes reales entregando sistemas funcionales y accesibles públicamente.',
+  },
+  {
+    type: 'education',
+    year: '2020 - Actualidad',
+    title: 'Ingeniería en Sistemas de Información',
+    institution: 'UTN — Facultad Regional Villa María (FRVM)',
+    description:
+      'Cursando el 5.° año. Próximo a graduarse. Sólida formación en ingeniería de software, arquitectura de sistemas, bases de datos y gestión de proyectos.',
   },
 ]
 
@@ -16,7 +25,7 @@ export default function Experience() {
           Experiencia & <span className="highlight">Educación</span>
         </h2>
         <p className="section-subtitle">
-          Mi formación académica y trayectoria
+          Mi trayectoria profesional y formación académica
         </p>
 
         <div className="timeline">
@@ -25,6 +34,9 @@ export default function Experience() {
               <div className="timeline-dot" />
               <div className="card timeline-content">
                 <span className="timeline-year">{item.year}</span>
+                <span className={`timeline-type ${item.type}`}>
+                  {item.type === 'work' ? '💼 Trabajo' : '🎓 Educación'}
+                </span>
                 <h3 className="timeline-title">{item.title}</h3>
                 <p className="timeline-institution">{item.institution}</p>
                 <p className="timeline-description">{item.description}</p>
