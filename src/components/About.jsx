@@ -1,7 +1,7 @@
 import useScrollReveal from '../hooks/useScrollReveal'
 
 export default function About() {
-  const imgUrl = import.meta.env.BASE_URL + 'perfil.png'
+  const imgUrl = import.meta.env.BASE_URL + 'perfil.jpg'
   const ref = useScrollReveal()
 
   return (

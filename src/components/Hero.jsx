@@ -8,7 +8,7 @@ const roles = [
 ]
 
 export default function Hero() {
-  const imgUrl = import.meta.env.BASE_URL + 'perfil.png'
+  const imgUrl = import.meta.env.BASE_URL + 'perfil.jpg'
   const ref = useScrollReveal()
   const [roleIndex, setRoleIndex] = useState(0)
   const [displayText, setDisplayText] = useState('')
@@ -64,7 +64,7 @@ export default function Hero() {
               Contacto
             </a>
             <a
-              href={import.meta.env.BASE_URL + 'perfil.png'}
+              href={import.meta.env.BASE_URL + 'perfil.jpg'}
               download="Mateo_Gerbaudo_CV.png"
               className="btn btn-ghost"
             >
@@ -73,7 +73,7 @@ export default function Hero() {
                 <polyline points="7 10 12 15 17 10" />
                 <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
-              CV
+              Foto
             </a>
           </div>
           <div className="hero-stats">
