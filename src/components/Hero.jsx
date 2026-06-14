@@ -64,8 +64,9 @@ export default function Hero() {
               Contacto
             </a>
             <a
-              href={import.meta.env.BASE_URL + 'perfil.jpg'}
-              download="Mateo_Gerbaudo_CV.png"
+              href={import.meta.env.BASE_URL + 'CV_MateoGerbaudo.pdf'}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-ghost"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -73,7 +74,7 @@ export default function Hero() {
                 <polyline points="7 10 12 15 17 10" />
                 <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
-              Foto
+              CV
             </a>
           </div>
           <div className="hero-stats">

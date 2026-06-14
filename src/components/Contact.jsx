@@ -105,8 +105,9 @@ export default function Contact() {
             </a>
 
             <a
-              href={import.meta.env.BASE_URL + 'perfil.jpg'}
-              download="Mateo_Gerbaudo_CV.png"
+              href={import.meta.env.BASE_URL + 'CV_MateoGerbaudo.pdf'}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-secondary"
               style={{ width: '100%', justifyContent: 'center' }}
             >
@@ -115,7 +116,7 @@ export default function Contact() {
                 <polyline points="7 10 12 15 17 10" />
                 <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
-              Descargar foto
+              Descargar CV
             </a>
           </div>
         </div>
