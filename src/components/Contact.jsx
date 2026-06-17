@@ -1,10 +1,8 @@
-import { useState, useRef } from 'react'
-import emailjs from '@emailjs/browser'
+import { useState } from 'react'
 import useScrollReveal from '../hooks/useScrollReveal'
 
 export default function Contact() {
   const ref = useScrollReveal()
-  const formRef = useRef()
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -13,20 +11,19 @@ export default function Contact() {
     e.preventDefault()
     setLoading(true)
 
-    emailjs.sendForm(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      formRef.current,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    )
+    fetch('https://formsubmit.co/ajax/mgerbaudo02@gmail.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form),
+    })
+      .then((res) => res.json())
       .then(() => {
         setSent(true)
         setForm({ name: '', email: '', message: '' })
         setTimeout(() => setSent(false), 3000)
       })
-      .catch((err) => {
+      .catch(() => {
         alert('Error al enviar el mensaje. Intentá de nuevo.')
-        console.error(err)
       })
       .finally(() => {
         setLoading(false)
@@ -45,7 +42,7 @@ export default function Contact() {
         </p>
 
         <div className="contact-layout">
-          <form className="contact-form card" ref={formRef} onSubmit={handleSubmit}>
+          <form className="contact-form card" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">Nombre</label>
               <input
