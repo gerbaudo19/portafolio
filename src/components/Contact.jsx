@@ -1,18 +1,36 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import emailjs from '@emailjs/browser'
 import useScrollReveal from '../hooks/useScrollReveal'
 
 export default function Contact() {
   const ref = useScrollReveal()
+  const formRef = useRef()
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const mailto = `mailto:mgerbaudo02@gmail.com?subject=Contacto desde portafolio - ${form.name}&body=${encodeURIComponent(form.message + '\n\n' + form.email)}`
-    window.open(mailto, '_blank')
-    setSent(true)
-    setForm({ name: '', email: '', message: '' })
-    setTimeout(() => setSent(false), 3000)
+    setLoading(true)
+
+    emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      formRef.current,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+      .then(() => {
+        setSent(true)
+        setForm({ name: '', email: '', message: '' })
+        setTimeout(() => setSent(false), 3000)
+      })
+      .catch((err) => {
+        alert('Error al enviar el mensaje. Intentá de nuevo.')
+        console.error(err)
+      })
+      .finally(() => {
+        setLoading(false)
+      })
   }
 
   return (
@@ -27,11 +45,12 @@ export default function Contact() {
         </p>
 
         <div className="contact-layout">
-          <form className="contact-form card" onSubmit={handleSubmit}>
+          <form className="contact-form card" ref={formRef} onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">Nombre</label>
               <input
                 id="name"
+                name="name"
                 type="text"
                 required
                 placeholder="Tu nombre"
@@ -43,6 +62,7 @@ export default function Contact() {
               <label htmlFor="email">Email</label>
               <input
                 id="email"
+                name="email"
                 type="email"
                 required
                 placeholder="tu@email.com"
@@ -54,6 +74,7 @@ export default function Contact() {
               <label htmlFor="message">Mensaje</label>
               <textarea
                 id="message"
+                name="message"
                 required
                 rows="5"
                 placeholder="Contame sobre tu proyecto..."
@@ -61,8 +82,8 @@ export default function Contact() {
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
               />
             </div>
-            <button type="submit" className="btn btn-primary">
-              {sent ? '✓ Enviado' : 'Enviar mensaje'}
+            <button type="submit" className="btn btn-primary" disabled={loading}>
+              {loading ? 'Enviando...' : sent ? '✓ Enviado' : 'Enviar mensaje'}
             </button>
           </form>
 
