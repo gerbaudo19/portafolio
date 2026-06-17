@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340" viewBox="0 0 600 340">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="340" fill="url(#bg)"/>
+  <g transform="translate(300,140)" fill="none" stroke="#6d5ae0" stroke-width="2">
+    <rect x="-60" y="-35" width="120" height="70" rx="8"/>
+    <circle cx="-25" cy="0" r="8" fill="#6d5ae0" opacity="0.3"/>
+    <circle cx="25" cy="0" r="8" fill="#6d5ae0" opacity="0.3"/>
+    <rect x="-20" y="-10" width="40" height="20" rx="3" fill="#6d5ae0" opacity="0.2"/>
+    <line x1="-60" y1="-55" x2="60" y2="-55" stroke="#6d5ae0" stroke-width="3" opacity="0.4"/>
+    <line x1="-50" y1="-65" x2="-30" y2="-55" stroke="#6d5ae0" stroke-width="2" opacity="0.4"/>
+    <line x1="50" y1="-65" x2="30" y2="-55" stroke="#6d5ae0" stroke-width="2" opacity="0.4"/>
+  </g>
+  <text x="300" y="230" text-anchor="middle" fill="#888" font-family="system-ui,sans-serif" font-size="14" font-weight="500">Auto S.A. Testbed</text>
+</svg>
