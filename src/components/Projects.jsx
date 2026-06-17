@@ -69,7 +69,7 @@ const projects = [
   },
   {
     title: 'Portafolio Personal',
-    image: 'portafolio.svg',
+    image: 'portafolio.png',
     description:
       'Este portafolio. Diseñado y desarrollado desde cero con React + Vite, mostrando proyectos, habilidades y experiencia profesional. Diseño responsive, modo oscuro y despliegue automatizado en GitHub Pages.',
     tech: ['React', 'Vite', 'CSS', 'GitHub Pages'],
