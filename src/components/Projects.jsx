@@ -166,6 +166,10 @@ function ProjectCard({ project, onImageClick }) {
 function ProjectModal({ project, onClose }) {
   const [closing, setClosing] = useState(false)
 
+  useEffect(() => {
+    if (project) setClosing(false)
+  }, [project])
+
   const handleClose = useCallback(() => {
     setClosing(true)
     setTimeout(onClose, 300)
