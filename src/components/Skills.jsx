@@ -38,6 +38,9 @@ const icons = {
   Scrum: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>,
   'Documentación técnica': <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" /><line x1="8" y1="7" x2="16" y2="7" /><line x1="8" y1="11" x2="14" y2="11" /></svg>,
   'Comunicación con stakeholders': <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>,
+  Solidity: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15 9 12 16 9 9 12 2" /><polygon points="12 8 15 15 12 22 9 15 12 8" /></svg>,
+  Ethereum: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 20 12 12 22 4 12 12 2" /><polyline points="12 2 12 12 20 12" /><polyline points="12 22 12 12 4 12" /></svg>,
+  MetaMask: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4l2 16 2-2 2 2 2-2 2 2 2-2 2 2 2-16-16 0z" /><path d="M6 10h12" /><path d="M8 14h8" /></svg>,
 }
 
 const skillCategories = [
@@ -72,6 +75,10 @@ const skillCategories = [
   {
     title: 'Metodologías',
     skills: ['Scrum', 'Documentación técnica', 'Comunicación con stakeholders'],
+  },
+  {
+    title: 'Blockchain',
+    skills: ['Solidity', 'Ethereum', 'MetaMask'],
   },
 ]
 
