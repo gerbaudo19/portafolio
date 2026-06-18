@@ -1,7 +1,7 @@
 import useScrollReveal from '../hooks/useScrollReveal'
 
 export default function About() {
-  const imgUrl = import.meta.env.BASE_URL + 'perfil.jpg'
+  const imgUrl = import.meta.env.BASE_URL + 'perfil2.jpeg'
   const ref = useScrollReveal()
 
   return (
@@ -65,15 +65,8 @@ export default function About() {
               <div className="detail">
                 <div className="detail-icon">📱</div>
                 <div className="detail-info">
-                  <strong>Teléfono</strong>
-                  <p>+54 3537 661736</p>
-                </div>
-              </div>
-              <div className="detail">
-                <div className="detail-icon">🎓</div>
-                <div className="detail-info">
                   <strong>Estudio</strong>
-                  <p>UTN FRVM - 5° año Ing. Sistemas</p>
+                  <p>UTN FRVM - 5° Ing. en Sistemas</p>
                 </div>
               </div>
             </div>

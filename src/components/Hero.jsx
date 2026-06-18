@@ -43,7 +43,7 @@ export default function Hero() {
         <div className="hero-text">
           <div className="hero-greeting">
             <span className="hero-greeting-dot" />
-            Disponible para proyectos
+            Disponible para oportunidades y proyectos Full Stack
           </div>
           <h1 className="hero-name">
             Mateo <span className="highlight">Gerbaudo</span>
@@ -78,10 +78,6 @@ export default function Hero() {
             </a>
           </div>
           <div className="hero-stats">
-            <div className="stat">
-              <span className="stat-number">2+</span>
-              <span className="stat-label">Años</span>
-            </div>
             <div className="stat">
               <span className="stat-number">7</span>
               <span className="stat-label">Proyectos</span>

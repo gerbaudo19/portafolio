@@ -441,16 +441,22 @@
 }
 
 /* ===== Skills ===== */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+.skills-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.skill-category-vertical {
+  padding: 28px 32px;
 }
 
 .skill-category-title {
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   color: var(--accent-light);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -466,54 +472,46 @@
   background: var(--border);
 }
 
-.skill-items {
+.skill-badges {
   display: flex;
-  flex-direction: column;
-  gap: 18px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.skill-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
-}
-
-.skill-name {
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.skill-level {
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 50px;
+  background: rgba(109, 90, 224, 0.08);
+  border: 1px solid rgba(109, 90, 224, 0.15);
+  color: var(--accent-light);
   font-size: 0.85rem;
-  color: var(--text-tertiary);
   font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: default;
 }
 
-.skill-bar {
-  height: 6px;
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 3px;
-  overflow: hidden;
-  position: relative;
+.skill-badge:hover {
+  background: rgba(109, 90, 224, 0.18);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(109, 90, 224, 0.2);
 }
 
-.skill-bar-fill {
-  height: 100%;
-  background: var(--accent-gradient);
-  border-radius: 3px;
-  transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  position: relative;
-}
-
-.skill-bar-fill::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
+.skill-badge-icon {
   width: 20px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 3px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-badge-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 /* ===== Projects ===== */
@@ -1036,8 +1034,12 @@
     order: -1;
   }
 
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .skills-vertical {
+    max-width: 100%;
+  }
+
+  .skill-category-vertical {
+    padding: 24px;
   }
 
   .contact-grid {
@@ -1121,8 +1123,12 @@
     gap: 40px;
   }
 
-  .skills-grid {
-    grid-template-columns: 1fr;
+  .skills-vertical {
+    gap: 20px;
+  }
+
+  .skill-category-vertical {
+    padding: 20px;
   }
 
   .projects-grid {

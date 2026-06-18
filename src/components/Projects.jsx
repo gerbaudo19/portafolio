@@ -6,7 +6,7 @@ const categories = ['Todos', 'Full Stack', 'Backend', 'Frontend', 'Académico']
 
 const projects = [
   {
-    title: 'Mercado Fiado',
+    title: 'Sistema Gestor de Fiados',
     image: 'mercadofiado.png',
     description:
       'Aplicación web para la gestión de ventas fiadas y control de deudas en comercios. Resuelve la necesidad de llevar un registro digital de transacciones a crédito, calculando saldos en tiempo real y permitiendo el seguimiento de clientes y pagos. Incluye autenticación JWT con control de sesiones y protección de rutas por rol, más integración con pasarela de pagos.',
